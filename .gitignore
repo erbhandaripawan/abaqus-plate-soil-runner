@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+*.cae
+*.odb
+*.dat
+*.msg
+*.sta
+*.com
+*.prt
+*.sim
+*.lck
+*.xlsx
+configs/**/outputs/
+*.zip
+/abaqus-plate-soil-runner/

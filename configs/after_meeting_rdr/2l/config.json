@@ -1,0 +1,70 @@
+{
+  "case_name": "after_meeting_rdr_2l",
+  "geometry": {
+    "plate_radius": 1.0,
+    "plate_thickness": 0.1,
+    "soil_depth": 20.0,
+    "soil_radius_factor": 100.0
+  },
+  "materials": {
+    "plate_elastic": {
+      "elastic_modulus": 30000000000.0,
+      "poisson_ratio": 0.2,
+      "density": 2400.0
+    },
+    "soil_layer_1": {
+      "elastic_modulus": 50000000.0,
+      "poisson_ratio": 0.35,
+      "density": 1800.0
+    },
+    "soil_layer_2": {
+      "elastic_modulus": 150000000.0,
+      "poisson_ratio": 0.33,
+      "density": 1900.0
+    }
+  },
+  "plate": {
+    "material": "plate_elastic"
+  },
+  "soil_layers": [
+    {
+      "name": "L1",
+      "top_depth": 0.0,
+      "bottom_depth": 2.0,
+      "material": "soil_layer_1"
+    },
+    {
+      "name": "L2",
+      "top_depth": 2.0,
+      "bottom_depth": 20.0,
+      "material": "soil_layer_2"
+    }
+  ],
+  "loading": {
+    "pressure": 100000.0
+  },
+  "mesh": {
+    "global_soil_size": 2.0,
+    "plate_size": 0.05,
+    "fine_depth": 2.0,
+    "fine_radius_factor": 1.2,
+    "fine_size": 0.025,
+    "depth_breaks": [0.025, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0],
+    "radial_break_factors": [0.1, 0.2, 0.5, 0.8, 1.0, 1.2, 2.0, 5.0, 10.0]
+  },
+  "extraction": {
+    "radius_factors": [0.0, 0.2, 0.5, 0.8, 1.0, 1.2],
+    "depths": [0.0, 0.025, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0],
+    "plate_resultant_bins": 50
+  },
+  "job": {
+    "name": "after_meeting_rdr_2l",
+    "num_cpus": 1,
+    "num_domains": 1,
+    "memory_percent": 90
+  },
+  "output": {
+    "directory": "outputs"
+  }
+}
+
